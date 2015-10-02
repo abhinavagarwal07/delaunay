@@ -13,6 +13,7 @@ typedef float real;
  
 typedef struct {
 	real	x, y;
+	
 	void read()
 	{
 		cin >> x >> y;
@@ -24,6 +25,11 @@ typedef struct {
 } del_point2d_t;
 struct triangle{
 	int x[3];
+	void print()
+	{
+		for(int i=0;i<3;++i)
+			cout << x[i] << ' ';cout << '\n';
+	}
 };
 struct point
 {

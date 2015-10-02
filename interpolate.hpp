@@ -11,12 +11,12 @@ formation interpolation (vector<formation> &vec, del_point2d_t actballpos)
 	float x1, y1, x2, y2, x3, y3, x4, y4, a1, b1, a2, b2;
 	int i,j;
 	
-	x1= vec.at(0).ballpos.x;
-	y1= vec.at(0).ballpos.y;
-	x2= vec.at(1).ballpos.x;
-	y2= vec.at(1).ballpos.y;
-	x3= vec.at(2).ballpos.x;
-	y3= vec.at(2).ballpos.y;
+	x1= vec[0].ballpos.x;
+	y1= vec[0].ballpos.y;
+	x2= vec[1].ballpos.x;
+	y2= vec[1].ballpos.y;
+	x3= vec[2].ballpos.x;
+	y3= vec[2].ballpos.y;
 	x4= actballpos.x;
 	y4= actballpos.y;
 	
@@ -36,8 +36,8 @@ formation interpolation (vector<formation> &vec, del_point2d_t actballpos)
 	
 	interm.ballpos= inter;
 	for(i=0;i<10;i++){
-		interm.bot_pos.at(i).x= vec.at(1).bot_pos.at(i).x+ (vec.at(2).bot_pos.at(i).x- vec.at(1).bot_pos.at(i).x)*m1/(m1+n1);
-		interm.bot_pos.at(i).y= vec.at(1).bot_pos.at(i).y+ (vec.at(2).bot_pos.at(i).y- vec.at(1).bot_pos.at(i).y)*m1/(m1+n1);
+		interm.bot_pos[i].x= vec[1].bot_pos.at(i).x+ (vec[2].bot_pos[i].x- vec[1].bot_pos[i].x)*m1/(m1+n1);
+		interm.bot_pos[i].y= vec[1].bot_pos.at(i).y+ (vec[2].bot_pos[i].y- vec[1].bot_pos[i].y)*m1/(m1+n1);
 	}
 	
 	m2= dist(inter, vec.at(0).ballpos);
@@ -45,8 +45,8 @@ formation interpolation (vector<formation> &vec, del_point2d_t actballpos)
 	
 	final_pos.ballpos= actballpos;
 	for(i=0;i<10;i++){
-		final_pos.bot_pos.at(i).x= vec.at(3).bot_pos.at(i).x+ (interm.bot_pos.at(i).x- vec.at(3).bot_pos.at(i).x)*m2/(m2+n2);
-		final_pos.bot_pos.at(i).y= vec.at(3).bot_pos.at(i).y+ (interm.bot_pos.at(i).y- vec.at(3).bot_pos.at(i).y)*m2/(m2+n2);
+		final_pos.bot_pos.at(i).x= vec.at(0).bot_pos.at(i).x+ (interm.bot_pos.at(i).x- vec.at(0).bot_pos.at(i).x)*m2/(m2+n2);
+		final_pos.bot_pos.at(i).y= vec.at(0).bot_pos.at(i).y+ (interm.bot_pos.at(i).y- vec.at(0).bot_pos.at(i).y)*m2/(m2+n2);
 	}
 	
 	return final_pos;

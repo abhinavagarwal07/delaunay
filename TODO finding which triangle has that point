@@ -1,0 +1,20 @@
+kiss triangle ke undar hai point uska bhi code likhe
+
+U have
+
+
+typedef struct {
+	float	x, y;
+} del_point2d_t;
+vector<del_point2d_t> ball_pos
++
+struct triangle{
+int sides[3];
+};
+
+vector <triangle> traingles
+
+in which each member contains 3 index representing index of ball_pos vector
+
+expected output
+a struct triangle
