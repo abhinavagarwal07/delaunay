@@ -68,14 +68,13 @@ int main()
 	cin >> i >> j;
 	int x;//[3];
 	
-	
+	cout << "Interpolating Using: \n";	
 	for(int it=0;it<3;++it) 
 	{
 		cin >> x;//[i];	
 		f2.push_back(f[x]);//f2.push_back(f[1]);f2.push_back(f[4]);
 		f[x].print();
 	}
-	cout << "Interpolating Using: \n";
 //	for(i=0;i<3;++i)
 ///		f2[i].print();
 	
