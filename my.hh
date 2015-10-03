@@ -10,8 +10,9 @@
 #define MAX_FORMATIONS 40
 using namespace std;
 typedef float real;
- 
-typedef struct {
+struct formation;struct triangle;
+
+typedef struct del_point2d_t_tag{
 	real	x, y;
 	
 	void read()
@@ -23,6 +24,14 @@ typedef struct {
 		cout << x << ' ' << y << '\n';
 	}
 } del_point2d_t;
+
+vector<formation> f;
+vector<vector<del_point2d_t> > players; // players[player_id][formation_id] == position of a player in an formation
+del_point2d_t ball_pos[MAX_FORMATIONS];
+vector<triangle> tr;
+int n,k;
+int num_triangles;
+
 struct triangle{
 	int x[3];
 	void print()
