@@ -1,12 +1,6 @@
 #include "my.hh"
 #include "delaun.hpp"
 #include "interpolate.hpp"
-vector<formation> f;
-vector<vector<del_point2d_t> > players; // players[player_id][formation_id] == position of a player in an formation
-del_point2d_t ball_pos[MAX_FORMATIONS];
-vector<triangle> tr;
-int n,k;
-int num_triangles;
 void update()
 {
 	int i,j;//,k,n;
@@ -52,8 +46,8 @@ void make_triangles()
 	for (int i = 0; i < re2->num_triangles; ++i){
 		for (int j = 0; j < 3; ++j){
 			tr[i].x[j] = re2->tris[3 * i + j];
-			tr[i].print();
 		}
+		tr[i].print();
 	}
 
 }
@@ -67,14 +61,24 @@ int main()
 	cout << "Give a ball position\n";
 	
 	vector<formation> f2;
-	f2.push_back(f[0]);f2.push_back(f[1]);f2.push_back(f[4]);
 	system("clear");
 
-	cout << "Interpolating Using: \n";
-	for(i=0;i<3;++i)
-		f2[i].print();
-
+//	cout <<"f.size() "<<f.size() <<'\n';
+//	f[4].print();
 	cin >> i >> j;
+	int x;//[3];
+	
+	
+	for(int it=0;it<3;++it) 
+	{
+		cin >> x;//[i];	
+		f2.push_back(f[x]);//f2.push_back(f[1]);f2.push_back(f[4]);
+		f[x].print();
+	}
+	cout << "Interpolating Using: \n";
+//	for(i=0;i<3;++i)
+///		f2[i].print();
+	
 	del_point2d_t ball;ball.x=i;ball.y=j;
 	formation gg  = interpolation(f2,ball);
 	
