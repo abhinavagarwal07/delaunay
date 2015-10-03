@@ -15,9 +15,9 @@ triangle& searchtri(del_point2d_t ball)
 	sz= tr.size();
 	
 	for(i=0;i<sz;i++){
-		v1 = ball_pos(tr[i][0]);
-		v2 = ball_pos(tr[i][1]);
-		v3 = ball_pos(tr[i][2]); 
+		v1 = ball_pos[tr[i].x[0]];
+		v2 = ball_pos[tr[i].x[1]];
+		v3 = ball_pos[tr[i].x[2]]; 
 		
 		b1 = sign(ball, v1, v2) < 0.0f;
     		b2 = sign(ball, v2, v3) < 0.0f;
