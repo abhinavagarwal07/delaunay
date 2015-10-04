@@ -72,7 +72,7 @@ int main()
 	cout << "Read Success\n";
 	make_triangles();
 	cout << "Give a ball position\n";
-	
+	remove_st_lines();
 	vector<formation> f2;
 	system("clear");
 
